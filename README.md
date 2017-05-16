@@ -12,3 +12,7 @@ Base set up running on Ruby on Rails with Postgres database.
     - ./postgres_db/dumps:/db/dumps
     - ./postgres_db/tmp:/tmp
   
+* Create a Postgres container superuser
+  - run docker ps and find postgres image_id
+  - run command using:
+    docker exec -it #{image_id} psql -U postgres -c \ "CREATE USER root SUPERUSER PASSWORD 'password';"
